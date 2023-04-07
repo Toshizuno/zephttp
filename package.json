@@ -1,0 +1,22 @@
+{
+  "name": "zephttp",
+  "version": "1.0.0",
+  "description": "Super minimalistic and performant HTTP/1.1 interface.",
+  "main": "zephttp.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toshizuno/zephttp.git"
+  },
+  "keywords": [
+    "http"
+  ],
+  "author": "toshizuno",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Toshizuno/zephttp/issues"
+  },
+  "homepage": "https://github.com/Toshizuno/zephttp#readme"
+}
