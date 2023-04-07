@@ -29,7 +29,10 @@ import zephttp from 'zephttp';
 const server = zephttp.createServer();
 
 // Handles GET requests on '/' from the subdomains '' and 'www'.
-server.on('/', {}, function (request, response) {
+server.on('/', {
+        allowedMethods: ['get'],
+        allowedSubdomains: ['', 'www']
+}, function (request, response) {
         // Sends the header information to the client.
         response.writeHead(200, {
                 'content-type': 'text/html'
@@ -48,7 +51,10 @@ import zephttp from 'zephttp';
 const server = zephttp.createServer();
 
 // Handles GET requests on '/' from the subdomains '' and 'www'.
-server.on('/', {}, function (request, response) {
+server.on('/', {
+        allowedMethods: ['get'],
+        allowedSubdomains: ['', 'www']
+}, function (request, response) {
         // Sends the header information to the client.
         response.writeHead(200, {
                 'content-type': 'text/html'
@@ -57,7 +63,7 @@ server.on('/', {}, function (request, response) {
         // Sends the response to the client.
         response.end('<!DOCTYPE html><html lang="en"><head></head><body><p>Hello, world!</p></body></html>');
 });
-`
+
 // Exposes the HTTP/1.1 server to the internet.
 server.listen(443, '0.0.0.0', function () {
         const { address, port } = server.address();
