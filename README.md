@@ -6,7 +6,7 @@ You can install ZephTTP by opening a command prompt in your project's directory 
 import zephttp from 'zephttp';
 ```
 ## Initializing the interface.
-Create the interface by calling either the `createServer` method for an insecure server, or the `createSecureServer` method for a secure server.
+Create the interface by calling the `createServer` method. For a secure server define an options object with certificate and key information.
 ```js
 import fs from 'node:fs';
 import zephttp from 'zephttp';
@@ -15,7 +15,7 @@ import zephttp from 'zephttp';
 const server = zephttp.createServer();
 
 // Creates an interface to be used with `node:https`.
-const server = zephttp.createSecureServer({
+const server = zephttp.createServer({
         cert: fs.readFileSync('cert.pem'),
         key: fs.readFileSync('key.pem')
 });
@@ -65,7 +65,7 @@ server.on('/', {
 });
 
 // Exposes the HTTP/1.1 server to the internet.
-server.listen(443, '0.0.0.0', function () {
+server.listen(80, '0.0.0.0', function () {
         const { address, port } = server.address();
         console.log('[zephttp] Secure HTTP/1.1 server listening on ${address}:${port}.');
 });
