@@ -1,6 +1,6 @@
 {
   "name": "zephttp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Super minimalistic and performant HTTP/1.1 interface.",
   "main": "zephttp.mjs",
   "scripts": {

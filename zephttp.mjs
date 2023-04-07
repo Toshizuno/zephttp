@@ -51,7 +51,6 @@ export function createServer(options = new https.Agent().options) {
 
                                         // Registers the route to the selected subdomain under the specified method.
                                         stack[subdomain.toLowerCase()][method.toLowerCase()][path.toLowerCase()] = callback;
-                                        console.log(`${method.toLowerCase()}\t${subdomain.toLowerCase()}\t${path.toLowerCase()}`);
                                 };
                         };
                 },
